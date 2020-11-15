@@ -25,7 +25,7 @@
     <link href="album.css" rel="stylesheet" />
   </head>
   <body>
-    <%- include('common/header'); -%>
+   
 <div class="container">
  
   
@@ -42,15 +42,18 @@
            
 
         </tr>
+        
       </thead>
         <%  stores.forEach(function(store)  {
             
         %>
 
             <tr>
-                <td><%=  store.store_number  %></td>
+                <td><%=  store.store  %></td>
                 <td><%=  store.size  %></td>
                 <td><%= store.type %></td>
+               
+
                
                 
                 <td class="text-center"><a  href="#"class='btn btn-info btn-xs'><span class="glyphicon glyphicon-edit"></span> Edit</a> 
@@ -59,13 +62,7 @@
             </tr>
             
          <%  
-          });
-         %>
-
-
-       
-  
-          
+          });%>      
     </table>
 
      

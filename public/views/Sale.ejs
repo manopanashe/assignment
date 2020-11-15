@@ -25,44 +25,33 @@
     <link href="css/album.css" rel="stylesheet" />
   </head>
   <body>
-    <%- include('common/header'); -%>
-<div class="container">
- 
-  <% if(message) {%>
-    <div class="alert alert-primary" role="alert">
-      <%= message %> 
-    </div>
-   <%} %>
+   
     <div class="row col-md-12 col-md-offset-2 custyle mx-auto">
       
   
-    <button type="button" class="btn btn-primary">Create a new taster</button> 
-    <h1 class="mx-auto"> 🍷 Wine Tasters 🍷  </h1>
+    <h1 class="mx-auto"> Company 2020 Sales</h1>
   
     <table class="table table-striped custab">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Twitter</th>
-            <th>Tastings#</th>
+            <th>Store Number</th>
+            <th>Department</th>
+            <th>weekly Sales</th>
+            
 
         </tr>
 
-        <%  
-        
-          tasters.forEach(taster => {
+        <%  Sale.forEach(function(Sales) {
             
         %>
 
             <tr>
-                <td><%=  taster._id  %></td>
-                <td><%=  taster.name  %></td>
-                <td><%=  (taster.twitter || "-") %></td>
-                <td><%=  taster.tastings  %></td>
+                <td><%=  Sales.Store  %></td>
+                <td><%=  Sales.Dept  %></td>
+                <td><%=  Sales.Weekly_sales%></td>
+             
                 
-                <td class="text-center"><a  href="/taster/edit/<%= taster.id%>"class='btn btn-info btn-xs'><span class="glyphicon glyphicon-edit"></span> Edit</a> 
-                  <a  href="/tasters/delete/<%= taster.id %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+               
                  
             </tr>
             

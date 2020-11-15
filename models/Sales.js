@@ -6,3 +6,4 @@ const salesSchema = new Schema({
     Dept: Number,
     Weekly_sales: Number,
 },{timestamps:true});
+module.exports = mongoose.model("Sales",salesSchema);

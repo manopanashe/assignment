@@ -12,19 +12,20 @@ const storeController = require("./controllers/store");
 /**
  * 
  */
-app.get("/prediction", featuresController.list);
+app.get("/feature", featuresController.list);
+app.set("/Sale","./views/Sale");
 app.get("/Sale", salesController.list);
 app.get("/stores", storeController.list)
 
-const { WEB_PORT, MONGODB_URI } = process.env;
+const { WEB_PORT, MONGODB_URL } = process.env;
 app.set("views", "./public/views");
 app.set("view engine", "ejs");
 
 /**
- * notice above we are using dotenv. We can now pull the values from our environment
+ * notice above we are using dotenv. We can now pull the values from our envATironment
  */
 
-mongoose.connect(MONGODB_URI,{useNewUrlParser: true});
+mongoose.connect(MONGODB_URL,{useNewUrlParser: true});
 mongoose.connection.on("error", (err) => {
   console.error(err);
   console.log(

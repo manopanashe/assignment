@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const {Schema} = mongoose;
 
 const storeSchema = new Schema({
-    Store_number: String,
-    Size:String,
+    store: String,
+    size:String,
     type:String,
 },
 {timestamps:true});

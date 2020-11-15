@@ -6,3 +6,4 @@ const featureSchema = new Schema({
     Date: String,
 
 },{timestamps:true});
+module.exports = mongoose.model("Features",featureSchema);
