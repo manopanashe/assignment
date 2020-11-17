@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const {Schema} = mongoose;
 
 const storeSchema = new Schema({
-    store: String,
+    store_number: String,
     size:String,
     type:String,
 },
