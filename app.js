@@ -12,10 +12,10 @@ const storeController = require("./controllers/store");
 /**
  * 
  */
-app.get("/feature", featuresController.list);
-app.set("/Sale","./views/Sale");
-app.get("/Sale", salesController.list);
-app.get("/stores", storeController.list)
+app.get("/JCfeatures", featuresController.list);
+app.set("/JCsales","./views/JCsales");
+app.get("/JCsales", salesController.list);
+app.get("/JCstores", storeController.list)
 
 const { WEB_PORT, MONGODB_URL } = process.env;
 app.set("views", "./public/views");

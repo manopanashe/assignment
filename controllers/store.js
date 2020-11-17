@@ -2,8 +2,8 @@ const Stores = require('../models/Stores');
 
 exports.list = async (req,res) =>{
     try{
-        const stores = await Stores.find({});
-        res.render("stores",{stores: stores});
+        const JCstores = await Stores.find({});
+        res.render("JCstores",{JCstores: JCstores});
         console.log('running');
 
     }catch(e){
