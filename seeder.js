@@ -3,7 +3,7 @@ const mongodb = require("mongodb").MongoClient;
 const fastcsv = require("fast-csv");
 
 // let url = "mongodb://username:password@localhost:27017/";
-let url = "mongodb://localhost:27017/";
+let url = "mongodb+srv://admin:ZU1yK7Xg1yJ9yKpN@cluster0.7xp97.mongodb.net/jclarke_db?retryWrites=true&w=majority";
 /**
  * feature collection
  */
@@ -13,9 +13,10 @@ let csvStream = fastcsv
   .parse()
   .on("data", function(data) {
     csvData.push({
-      store_number: data[0],
-      type: data[1],
-      size: data[2],
+      province: data[0],
+      store_number: data[1],
+      type: data[2],
+      size: data[3],
       
     });
   })
@@ -33,7 +34,7 @@ let csvStream = fastcsv
 
         client
           .db("jclarke_db")
-          .collection("store_data")
+          .collection("stores")
           .insertMany(csvData, (err, res) => {
             if (err) throw err;
 
@@ -43,6 +44,7 @@ let csvStream = fastcsv
       }
     );
   });
+  
 /**
  * store data collection
  */
@@ -82,7 +84,10 @@ let csvStream2 = fastcsv
 
         client
           .db("jclarke_db")
-          .collection("feature_data")
+          .collection("features")
+          .aggregate([{$group:{_id:"MarkDowns"}},
+          {$project:{name: "$_id","_id":0}},
+          {$out:"MarkDowns"}]).toArray()
           .insertMany(csvData2, (err, res) => {
             if (err) throw err;
 
@@ -95,7 +100,7 @@ let csvStream2 = fastcsv
   /**
    * sales collection
    */
-  let stream3 = fs.createReadStream("sales-data-set.csv");
+let stream3 = fs.createReadStream("sales-data-set.csv");
 let csvData3 = [];
 let csvStream3 = fastcsv
   .parse()
@@ -124,7 +129,7 @@ let csvStream3 = fastcsv
 
         client
           .db("jclarke_db")
-          .collection("sales_data")
+          .collection("sales")
           .insertMany(csvData3, (err, res) => {
             if (err) throw err;
 
@@ -133,7 +138,7 @@ let csvStream3 = fastcsv
           });
       }
     );
-  });
+  }); 
   stream.pipe(csvStream);
   stream2.pipe(csvStream2);
   stream3.pipe(csvStream3);

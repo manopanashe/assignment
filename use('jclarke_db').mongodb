@@ -1,0 +1,18 @@
+use('jclarke_db')
+
+db.sales.aggregate([
+  {/**
+   * query: The query in MQL.
+   */
+  $match: {
+    store_number: '1'
+  }},
+  {/**
+   * _id: The id of the group.
+   * fieldN: The first field name.
+   */
+  $group: {
+    _id: "$Dept",
+    fieldN : {$sum: "$Weekly_sales"}
+  }}
+])

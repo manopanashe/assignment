@@ -1,0 +1,3 @@
+u:admin
+password:ZU1yK7Xg1yJ9yKpN
+s:mongodb+srv://admin:ZU1yK7Xg1yJ9yKpN@cluster0.7xp97.mongodb.net/jclarke_db?retryWrites=true&w=majority

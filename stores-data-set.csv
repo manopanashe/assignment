@@ -1,46 +1,46 @@
-Store,Type,Size
-1,A,151315
-2,A,202307
-3,B,37392
-4,A,205863
-5,B,34875
-6,A,202505
-7,B,70713
-8,A,155078
-9,B,125833
-10,B,126512
-11,A,207499
-12,B,112238
-13,A,219622
-14,A,200898
-15,B,123737
-16,B,57197
-17,B,93188
-18,B,120653
-19,A,203819
-20,A,203742
-21,B,140167
-22,B,119557
-23,B,114533
-24,A,203819
-25,B,128107
-26,A,152513
-27,A,204184
-28,A,206302
-29,B,93638
-30,C,42988
-31,A,203750
-32,A,203007
-33,A,39690
-34,A,158114
-35,B,103681
-36,A,39910
-37,C,39910
-38,C,39690
-39,A,184109
-40,A,155083
-41,A,196321
-42,C,39690
-43,C,41062
-44,C,39910
-45,B,118221
+Province,Store,Type,Size
+California,1,A,151315
+California,2,A,202307
+Northern Spain,3,B,37392
+Northern Spain,4,A,205863
+California,5,B,34875
+California,6,A,202505
+Kumeu,7,B,70713
+Oregon,8,A,155078
+Oregon,9,B,125833
+California,10,B,126512
+Washington,11,A,207499
+Bulgaria,12,B,112238
+California,13,A,219622
+Tuscany,14,A,200898
+France Other,15,B,123737
+Washington,16,B,57197
+Tuscany,17,B,93188
+Rhône Valley,18,B,120653
+Tuscany,19,A,203819
+Tuscany,20,A,203742
+California,21,B,140167
+Northern Spain,22,B,119557
+California,23,B,114533
+Oregon,24,A,203819
+Provence,25,B,128107
+Northern Spain,26,A,152513
+Northern Spain,27,A,204184
+Northern Spain,28,A,206302
+Oregon,29,B,93638
+California,30,C,42988
+Northeastern Italy,31,A,203750
+Oregon,32,A,203007
+Oregon,33,A,39690
+Southwest France,34,A,158114
+Oregon,35,B,103681
+Oregon,36,A,39910
+California,37,C,39910
+Northern Spain,38,C,39690
+Southwest France,39,A,184109
+Maule Valley,40,A,155083
+South Australia,41,A,196321
+Robertson,42,C,39690
+California,43,C,41062
+Durbanville,44,C,39910
+Aconcagua Valley,45,B,118221
