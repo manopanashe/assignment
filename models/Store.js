@@ -9,4 +9,5 @@ const storeSchema = new Schema({
 },
 {timestamps:true});
 
+storeSchema.index({'$**': 'text'});
 module.exports = mongoose.model("Store",storeSchema);

@@ -3,7 +3,7 @@ const mongodb = require("mongodb").MongoClient;
 const fastcsv = require("fast-csv");
 
 // let url = "mongodb://username:password@localhost:27017/";
-let url = "mongodb+srv://admin:ZU1yK7Xg1yJ9yKpN@cluster0.7xp97.mongodb.net/jclarke_db?retryWrites=true&w=majority";
+let url = "mongodb+srv://admin:b6vOdzB7b9WsdAsG@cluster0.gx61g.mongodb.net/jclarke_db?retryWrites=true&w=majority";
 /**
  * feature collection
  */
@@ -85,9 +85,6 @@ let csvStream2 = fastcsv
         client
           .db("jclarke_db")
           .collection("features")
-          .aggregate([{$group:{_id:"MarkDowns"}},
-          {$project:{name: "$_id","_id":0}},
-          {$out:"MarkDowns"}]).toArray()
           .insertMany(csvData2, (err, res) => {
             if (err) throw err;
 

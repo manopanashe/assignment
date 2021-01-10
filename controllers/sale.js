@@ -71,7 +71,7 @@ exports.edit = async (req, res) => {
         res.render('create-sale', {errors: e.errors})
         return;
       }return res.status(400).send({
-        message: JSON.parse(e),
+        message: 'could not enter new sale log',
       });
       
     }

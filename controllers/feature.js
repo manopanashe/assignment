@@ -60,11 +60,11 @@ exports.delete = async (req, res) => {
 };
 
 exports.create = async (req, res) => {
-    let feature = new Feature({ store_number: req.body.store_number,  CPI: req.body.CPI });
+   
     try {
-       
+        const feature = new Feature({ store_number: req.body.store_number,  CPI: req.body.CPI });
         await feature.save();
-        res.redirect('/JCfeature/?message= feature has been created')
+        res.redirect('/JCfeatures/?message= feature has been created')
     } catch (e) {
         if (e.errors) {
             console.log(e.errors);

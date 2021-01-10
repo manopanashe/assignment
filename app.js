@@ -14,6 +14,7 @@ const featureController = require("./controllers/feature");
 const salesController = require("./controllers/sale");
 const storeController = require("./controllers/store");
 const userController = require("./controllers/user");
+const storeApiController = require("./controllers/api/store");
 app.set("view engine", "ejs");
 /**
  * 
@@ -39,31 +40,28 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-global.user = false;
-app.use('*',async(req,res,next)=>{
-  console.log('running');
-  console.log('this is our user');
-  console.log(req.session);
-  if(req.session.userID){
-    const userL = await User.findById(req.session.userID);
-    global.user = userL;
+app.use("*", async (req, res, next) => {
+  global.user = false;
+  if (req.session.userID && !global.user) {
+    const user = await User.findById(req.session.userID);
+    global.user = user;
   }
   next();
-});
+})
 
-const authMiddleware = async(req,res,next) =>{
-const user = await User.findById(req.session.userID);
-  if(!user){
+const authMiddleware = async (req, res, next) => {
+  const user = await User.findById(req.session.userID);
+  if (!user) {
     return res.redirect('/');
   }
-  next();
+  next()
 }
 
 app.get("/JCfeatures", featureController.list);
 app.get("/JCfeatures/update/:id", featureController.edit);
-app.get("/JCfeatures/update/:id", featureController.update);
+app.post("/JCfeatures/update/:id", featureController.update);
 app.get("JCfeatures/delete/:id", featureController.delete);
-app.get("/create-feature", authMiddleware,(req,res) =>{
+app.get("/create-feature", (req,res) =>{
   res.render("create-feature",{errors:{}})
 });
 app.post("/create-feature", featureController.create);
@@ -77,14 +75,17 @@ app.get("/create-sale",(req,res) =>{
 });
 app.post("/create-sale", salesController.create);
 
+app.get("/api/search-store", storeApiController.list);
 app.get("/JCstores", storeController.list)
 app.get("/JCstores/update/:id",storeController.edit);
 app.post("/Jcstores/update/:id",storeController.update);
 app.get("/JCstores/delete/:id",storeController.delete);
+
 app.get("/create-store", (req,res)=>{
   res.render("create-store", {errors:{}})
 })
 app.post("/create-store", storeController.create);
+app.get("/update-store/:id",storeController.update);
 
 
 app.set("views", "./public/views");
@@ -110,6 +111,8 @@ app.get("/logout", async (req, res) => {
   global.user = false;
   res.redirect('/');
 })
+app.get('/search-store', (req,res)=> res.render('search-store'));
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);

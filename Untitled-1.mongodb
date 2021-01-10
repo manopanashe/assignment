@@ -1,3 +1,0 @@
-use("jclarke_db")
-
-db.sales.aggregate

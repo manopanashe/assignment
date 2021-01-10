@@ -76,6 +76,6 @@ exports.create = async (req, res) => {
       return;
     }
     return res.status(404).send({
-      message: JSON.parse(e),
+      message: 'could not create new store',
     })}
 };
