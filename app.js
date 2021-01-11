@@ -39,9 +39,9 @@ app.use(expressSession({ secret: 'foo barr', cookie: { expires: new Date(2534023
 app.get("/", (req, res) => {
   res.render("index");
 });
-
+ global.user = false;
 app.use("*", async (req, res, next) => {
-  global.user = false;
+ 
   if (req.session.userID && !global.user) {
     const user = await User.findById(req.session.userID);
     global.user = user;
@@ -68,13 +68,15 @@ app.post("/create-feature", featureController.create);
 
 app.get("/JCsales", salesController.list);
 app.get("/JCsales/update/:id", salesController.edit);
-app.post("/JCsales/update/:id", storeController.update);
-app.get("/JCsales/delete/:id", storeController.delete);
+app.post("/JCsales/update/:id", salesController.update);
+app.get("/JCsales/delete/:id", salesController.delete);
 app.get("/create-sale",(req,res) =>{
   res.render("create-sale",{errors:{}})
 });
 app.post("/create-sale", salesController.create);
 
+
+app.get('/search-store', (req,res)=> res.render('search-store'));
 app.get("/api/search-store", storeApiController.list);
 app.get("/JCstores", storeController.list)
 app.get("/JCstores/update/:id",storeController.edit);
@@ -111,7 +113,7 @@ app.get("/logout", async (req, res) => {
   global.user = false;
   res.redirect('/');
 })
-app.get('/search-store', (req,res)=> res.render('search-store'));
+
 
 
 app.listen(PORT, () => {

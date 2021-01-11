@@ -15,16 +15,16 @@ const jclarkeView = (jclarke_db) =>`
 `;
 const handleClick = async() =>{
     const  searchValue = document.querySelector('#searchInput').nodeValue;
-    const  jclarke_dbDomRef = document.querySelector('#storeItems');
+    const  jclarkeDomRef = document.querySelector('#storeItems');
     try {
         const ref = await fetch(`/api/search-store/?search=${searchValue}`);
         const searchResults = await ref.json();
 
-        let jclarke_dbHtml = [];
+        let jclarkeHtml = [];
         searchResults.forEach(jclarke_db =>{
-        jclarke_dbHtml.push(jclarkeView(jclarke_db));
+        jclarkeHtml.push(jclarkeView(jclarke_db));
         } );
-        jclarke_dbDomRef.innerHTML = jclarke_dbHtml.join("");
+        jclarkeDomRef.innerHTML = jclarkeHtml.join("");
     } catch (e) {
         console.log(e);
         console.log('could not search api')

@@ -46,7 +46,7 @@
             <th>Store Number</th>
             <th>Date</th>
             <th>CPI</th>
-            <th>Holiday</th>
+            <th>store temperature</th>
            
 
         </tr>
@@ -60,7 +60,7 @@
                 <td><%=  feature.store_number  %></td>
                 <td><%=  feature.Date  %></td>
                 <td><%= feature.CPI %></td>
-                <td><%= feature.isHoliday%> </td>
+                <td><%= feature.Temperature %> Celsius</td>
                 
                 
                 <td class="text-center"><a  href="/JCfeatures/update/<%= feature.id %>"class='btn btn-info btn-xs'><span class="glyphicon glyphicon-edit"></span> Edit</a> 
