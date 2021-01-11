@@ -1,4 +1,5 @@
-#Assignment project
+#J Clarke Management website
+
 
 ##Getting started
 
