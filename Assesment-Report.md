@@ -10,7 +10,7 @@ The J Clarke web-application will be a management portal for the company. It pro
 The proposed application will be using The MVC architecture. The architecture separates the application logic into three-part Model, Controller and View. As seen in the System Architecture diagram above, the model stores and manages data from the database. The view effectively provides the user interface of the application it contains all the functionality that directly interacts with the user. The controller connects the new and the model. it converts user input from the view  into to demands for the model to  retrieve or update data. The application will use a Non-relational database through mongo DB which is a document-based database that stores data in JSON-like documents.  <br>
 
 The database uses an existing dataset from the log details  which were previously stored in three CSV documents. As seen in the image above mongo then converts the data in the files into database objects which can then be accessed by the Model. The users should be able to access this data and interact with it on the browser. As seen in the image below the managers should be able to view data about the store as it is stored in the database and should be able to use Create, Update and Delete node functions on the data. 
-![interfaces](assignment/public/interfaces.png)
+![interfaces](/public/interfaces.png)
 
 # Key Design Choices
 Before developing the application, I first designed wireframes for the view layer for the application. The first page that the users will see when they visit the webpage will be the index page. 
