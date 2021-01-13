@@ -44,16 +44,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(expressSession({ secret: 'foo barr', cookie: { expires: new Date(253402300000000) } }));
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
-
-app.get("/logout", async (req, res) => {
-  req.session.destroy();
-  global.user = false;
-  res.redirect('/');
-})
-
 app.use("*", async (req, res, next) => {
   global.user = false;
   if (req.session.userID && !global.user) {
@@ -70,6 +60,16 @@ const authMiddleware = async (req, res, next) => {
   }
   next()
 }
+
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
+app.get("/logout", async (req, res) => {
+  req.session.destroy();
+  global.user = false;
+  res.redirect('/');
+})
 
 app.get("/create-feature", authMiddleware, (req,res) =>{
   res.render("create-feature",{errors:{}})
@@ -101,7 +101,7 @@ app.get('/search-store', (req,res)=> {
     res.render('search-store',storeApiController)});   
 app.get("/api/search-store", storeApiController.list);
 
-app.get("/JCstores", storeController.list)
+app.get("/JCstores", storeController.list);
 app.get("/JCstores/update/:id",storeController.edit);
 app.post("/Jcstores/update/:id",storeController.update);
 app.get("/JCstores/delete/:id",storeController.delete);
@@ -113,6 +113,8 @@ app.get("/update-store/:id",storeController.update);
 /**
  * notice above we are using dotenv. We can now pull the values from our envATironment
  */
+
+
 
 
 
