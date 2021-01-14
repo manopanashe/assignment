@@ -25,7 +25,7 @@
     <link href="css/album.css" rel="stylesheet" />
   </head>
   <body>
-   
+    <div class="container">
     <%- include ('common/header'); -%>
     <% if (message) {   %> 
       <div class="row justify-content-md-center">
@@ -36,17 +36,22 @@
     
     <% } %>
     <div class="row col-md-12 col-md-offset-2 custyle mx-auto">
-      <a role="button" class="btn btn-primary btn-xs" href="/create-sale">Enter new Sale Log</a>  
+       
+      <div class="jumbotron p-4 p-md-5 text-black rounded bg-light" >
+        <div class="col-md-10 px-0">
+          <h1 class="display-4 font-italic">J Clarke Management Weekly Sale Logs</h1>
+          <p class="lead my-3">Here you will find each store branch's weekly sales. These are Updated Weekly every Friday of the week.</p>
+         
+        </div>
+      </div>
   
-    <h1 class="mx-auto"> Weekly log of  Sales</h1>
-  
-    <table class="table table-striped custab">
-    <thead>
+    <table class="table table-striped custab table-dark">
+      <thead class="thead-light">
         <tr>
             <th>Store Number</th>
             <th>Department</th>
             <th>weekly Sales</th>
-            
+            <th><a role="button" class="btn btn-light btn-xs" href="/create-sale">Enter new Sale Log</a> </th>
 
         </tr>
 
@@ -58,8 +63,8 @@
                 <td><%=  sale.store_number %></td>
                 <td><%= sale.Date %></td>
                 <td><%=  sale.Weekly_sales%> products sold</td>
-                <td class="text-center"><a class='btn btn-info btn-xs' href="/JCsales/update/<%= sale.id %>" ><span class="glyphicon glyphicon-edit"></span> Edit</a> 
-                  <a  href="/JCsales/delete/<%= sale.id %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                <td class="text-center"><a class='btn btn-outline-secondary btn-xs' href="/JCsales/update/<%= sale.id %>" ><span class="glyphicon glyphicon-edit"></span> Edit</a> 
+                  <a  href="/JCsales/delete/<%= sale.id %>" class="btn btn-outline-secondary btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                 
                
                  

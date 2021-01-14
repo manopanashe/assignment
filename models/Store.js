@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const {Schema} = mongoose;
 
 const storeSchema = new Schema({
-    province: String,
+    province: { type: String, required: [true, 'Province is required'], minlength: [3, "Name must be 4 chars long"] },
     store_number: String,
     size:String,
     type:String,

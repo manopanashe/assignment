@@ -5,12 +5,27 @@
 # Introduction
 J Clarke is a global retail Company that has over 40 store branches across the world. Its stores are unique in many ways however the Administration for the company keeps logs for the store branches based on their numbers and locations and other various information and now these logs are stored into separate CSV files. Due to Covid-19, it has become less efficient for the company to have their store detail logs in these separate files and this has also made the data they need  less accessible for them. To solve this problem, I developed a proof-of-concept Web-application that moves these processes online. 
 # System Overview
-The J Clarke web-application will be a management portal for the company. It provides the administration a more efficient way to keep track of their branches during COVID-19 times. The application will contain appropriate tools that will allow them to be able to broadcast important company news or information and it will also help them to efficiently store and retrieve information about their store branches. <br>
+The J Clarke web-application is a management portal for the company. It provides the administration a more efficient way to keep track of their branches during COVID-19 times. The application will contain appropriate tools that will allow them to be able to broadcast important company news or information and it will also help them to efficiently store and retrieve information about their store branches. <br>
 ![system diagram](/assets/System-diagram.png) <br>
-The proposed application will be using The MVC architecture. The architecture separates the application logic into three-part Model, Controller and View. As seen in the System Architecture diagram above, the model stores and manages data from the database. The view effectively provides the user interface of the application it contains all the functionality that directly interacts with the user. The controller connects the new and the model. it converts user input from the view  into to demands for the model to  retrieve or update data. The application will use a Non-relational database through mongo DB which is a document-based database that stores data in JSON-like documents.  <br>
+The  application will be using The MVC architecture. The architecture separates the application logic into three-part Model, Controller and View. As seen in the System Architecture diagram above, the model stores and manages data from the database. The view effectively provides the user interface of the application it contains all the functionality that directly interacts with the user. The controller connects the new and the model. it converts user input from the view  into to demands for the model to  retrieve or update data. The application will use a Non-relational database through mongo DB which is a document-based database that stores data in JSON-like documents.  <br>
 
-The database uses an existing dataset from the log details  which were previously stored in three CSV documents. As seen in the image above mongo then converts the data in the files into database objects which can then be accessed by the Model. The users should be able to access this data and interact with it on the browser. As seen in the image below the managers should be able to view data about the store as it is stored in the database and should be able to use Create, Update and Delete node functions on the data. 
-![interface-diagram](/assets/interfaces.PNG)<br>
+The database uses an existing dataset from the log details  which were previously stored in three CSV documents. Mongo then converts the data in the files into database objects which can then be accessed by the Model in the MVC architecture. The users should be able to access this data and interact with the Key interface of the website as shown Below.  
+![log-in-interface-diagram](/assets/logIn-interface.PNG)<br>
+The users should access the portal by logging into it with their company email and password. After logging in they will be taken to the rest of web-application View pages. 
+However, if the User is new to the portal, they will need to register to the application by entering a valid email and constructing a secure password. 
+![register-interface-diagram](/assets/register-interface.PNG) <br>
+Once logged into the application the users will now be able to access the rest of the application View pages which allow them to  view data that is available in the database.
+![view-store-diagram](/assets/view-store.PNG)<br>
+They should be able to perform Node CRUD functions on the data that s in the database like creating a new data object as seen below. They will need to enter information that matches the structure of the object as it is stored in the database. 
+![create-store-diagram](/assets/create-store.PNG)<br>
+Once the user has added a new data object to the database, they will be re-directed to the designated view page for the object they have created, and  it should be shown on the table that displays the data and they should be able to update or delete or add more store logs.
+![update-diagram](/assets/update-store.PNG)<br>
+Another application interface will be to allow the user to update or delete the store logs. They will be able to update logs based on their store numbers and province. If they delete the log, they should not be able to see it on the table that displays the database data. 
+![search-store logs diagram](/assets/search-store.PNG)<br>
+The users should also be able to find a specific store through the search page. They will be able to type in any word in the search bar and it will return all the store logs associated with that word<br>
+![log-out-diagram](/assets/log-out.PNG)<br>
+Once the user has finished performing all the website tasks that they wanted to perform they will be able to log-out of the application by clicking the log-out button in the navigation. This  will re-direct them to the application Home page where they will need to log in again  to re-access the data. 
+
 
 # Key Design Choices
 Before developing the application, I first designed wireframes for the view layer for the application. The first page that the users will see when they visit the webpage will be the index page. 

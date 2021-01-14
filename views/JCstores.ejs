@@ -25,9 +25,9 @@
     <link href="album.css" rel="stylesheet" />
   </head>
   <body>
-    <%- include('common/header'); -%>
+
 <div class="container">
- 
+  <%- include('common/header'); -%>
   <% if (message) {   %> 
     <div class="row justify-content-md-center">
       <div class="alert alert-primary" role="alert">
@@ -37,18 +37,24 @@
   
   <% } %>
     <div class="row col-md-12 col-md-offset-2 custyle mx-auto">
-      <a role="button" class="btn btn-primary btn-xs" href="/create-store">Create a new Store</a>  
-
-    <h1 class="mx-auto"> J Clark Stores  </h1>
+     
+      <div class="jumbotron p-4 p-md-5 text-black rounded bg-light" >
+        <div class="col-md-9 px-0">
+          <h1 class="display-4 font-italic">J Clarke Management Store Logs</h1>
+          <p class="lead my-3">Our stores are expanding across the world. This progress is thanks to increase of our stores sales and inventory.To keep track of the changes here you will find Store details based on their locations and number.  </p>
+         
+        </div>
+      </div>
+   
     
-    <table class="table table-striped custab">
-    <thead>
+    <table class="table table-striped custab table-dark">
+    <thead class="thead-light">
         <tr>
            <th>Province</th>
             <th>Store Number</th>
             <th>Size</th>
             <th>Type</th>
-           
+            <th> <a role="button" class="btn btn-dark btn-xs" href="/create-store">Create a new Store</a>  </th>
 
         </tr>
         
@@ -60,8 +66,8 @@
           <td><%= store.store_number %></td>
           <td><%= store.size %></td>
           <td><%= store.type %></td>
-          <td class="text-center"><a class='btn btn-info btn-xs' href="/JCstores/update/<%= store.id %>" ><span class="glyphicon glyphicon-edit"></span> Edit</a> 
-            <a  href="/JCstores/delete/<%= store.id %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+          <td class="text-center"><a class='btn btn-outline-secondary btn-xs' href="/JCstores/update/<%= store.id %>" ><span class="glyphicon glyphicon-edit"></span> Edit</a> 
+            <a  href="/JCstores/delete/<%= store.id %>" class="btn btn-outline-secondary btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
            
         </tr>
        <%

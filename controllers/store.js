@@ -20,7 +20,7 @@ exports.list = async (req, res) => {
         message: message
       });
     console.log('running');
-    res.redirect('/JCstore/?message store updated')
+  
   } catch (e) {
     console.log(e)
     res.status(404).send({ message: "could not list stores" })
@@ -55,7 +55,7 @@ exports.delete = async (req, res) => {
   try {
 
     await Store.findByIdAndRemove(id);
-    res.redirect("/JCstores");
+    res.redirect("/JCstores/?meessage=store has been deleted");
   } catch (e) {
     res.status(404).send({
       message: `could not delete  record ${id}.`,

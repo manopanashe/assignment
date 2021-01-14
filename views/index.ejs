@@ -8,15 +8,10 @@
     <meta name="generator" content="Jekyll v4.1.1">
     <title>Jclarke Management</title>
 
-    <link rel="canonical"
-     href="https://getbootstrap.com/docs/4.5/examples/blog/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
 
     <!-- Bootstrap core CSS -->
-    <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-    crossorigin="anonymous">
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -32,94 +27,24 @@
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
-
       }
-      
     </style>
-
-    <link href="album.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
   </head>
-  <body>
-    
-   <%- include ('common/header'); -%>
-   <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark" >
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 font-italic">J Clarke Management website</h1>
-      <p class="lead my-3">Our stores are expanding across the world. This progress is thanks to increase of our stores sales and inventory. </p>
-     
-    </div>
-  </div>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <%- include ('common/header'); -%>
 
-  <div class="row mb-2">
-    <div class="col-md-6">
-      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">Our new Branch</strong>
-          <h3 class="mb-0">Ireland-Dublin</h3>
-          <div class="mb-1 text-muted">Nov 12</div>
-          <p class="card-text mb-auto">This store was opened On 12 November 2020. they will be comencing product sales on the 1st of December just in time for the Holiday sales. </p>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <img src="ima.jpg"  width="300" height="250">
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">J Clarke Management Portal</h1>
+    <p class="lead">“Choose a job you love, and you will never have to work a day in your life.” – Confucius.</p>
+    <p class="lead">
+      <a href="join" class="btn btn-lg btn-secondary">Enter Portal</a>
+    </p>
+  </main>
 
-         
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success">Festive Greetings</strong>
-          <h3 class="mb-0">Wishing you a Merry Christmass And a Happy New Year</h3>
-          <div class="mb-1 text-muted">Dec 11</div>
-          <p class="mb-auto">Wishing you all a safe Christmass and a Happy new year. Enjoy 20% staff discount in all stores during the holidays</p>
-         
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <img src="image2.jpg"  width="210" height="250">
-        </div>
-      </div>
-    </div>
-  </div>
+  <%- include('common/footer'); -%>
 </div>
-
-  
-<main role="main" class="container">
-  <div class="row">
-    <div class="col-md-8 blog-main">
-
-
-      <div class="blog-post">
-        <h2 class="blog-post-title"> J Clarke Annual Convention</h2>
-    
-
-        <p>Our annual J Clarke Convention will be held on the week starting from 25 January till the 31st of January. </p>
-        <hr>
-         <img src="image3.jpg" width="300" height="250">
-        <blockquote>
-          <p>it will be held at the  <strong>Manuvour Centre in Sweden</strong>The centerhas agreed to let us host our event in their build and will provide all essentila hospitalities for us</p>
-        </blockquote>
-        <h2>Speakers</h2>
-        <img src="image4.jpg" width="300" height="250"> 
-        <p>Rachel Osbon will be talking about renewable materials for clothes. Mr Mathew Oconnel will be showing us how to sustainably re-use and re-cycle materials. Maria Johns will be discussing how to imporve customer feedback and store ratings and many other activities included on the flyer. More Information will be sent by emails.</p>
-        
-      </div><!-- /.blog-post -->
-
-    </div><!-- /.blog-main -->
-
-    <aside class="col-md-4 blog-sidebar">
-      <div class="p-4 mb-3 bg-light rounded">
-        <h4 class="font-italic">About Us</h4>
-        <p class="mb-0">J Clarke is a Retail  Global Store <em> that has over 40 stores around the world.</em>we pride ourselves in offering the best quality and style at affordable prices for all. </p>
-      </div>
-     
-    </aside><!-- /.blog-sidebar -->
-
-  </div><!-- /.row -->
-
-</main><!-- /.container -->
-
-<%- include('common/footer'); -%>
-
 </body>
 </html>
