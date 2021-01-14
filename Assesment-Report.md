@@ -6,16 +6,16 @@
 J Clarke is a global retail Company that has over 40 store branches across the world. Its stores are unique in many ways however the Administration for the company keeps logs for the store branches based on their numbers and locations and other various information and now these logs are stored into separate CSV files. Due to Covid-19, it has become less efficient for the company to have their store detail logs in these separate files and this has also made the data they need  less accessible for them. To solve this problem, I developed a proof-of-concept Web-application that moves these processes online. 
 # System Overview
 The J Clarke web-application will be a management portal for the company. It provides the administration a more efficient way to keep track of their branches during COVID-19 times. The application will contain appropriate tools that will allow them to be able to broadcast important company news or information and it will also help them to efficiently store and retrieve information about their store branches. <br>
-![system diagram](System-diagram.png) <br>
+![system diagram](/assets/System-diagram.png) <br>
 The proposed application will be using The MVC architecture. The architecture separates the application logic into three-part Model, Controller and View. As seen in the System Architecture diagram above, the model stores and manages data from the database. The view effectively provides the user interface of the application it contains all the functionality that directly interacts with the user. The controller connects the new and the model. it converts user input from the view  into to demands for the model to  retrieve or update data. The application will use a Non-relational database through mongo DB which is a document-based database that stores data in JSON-like documents.  <br>
 
 The database uses an existing dataset from the log details  which were previously stored in three CSV documents. As seen in the image above mongo then converts the data in the files into database objects which can then be accessed by the Model. The users should be able to access this data and interact with it on the browser. As seen in the image below the managers should be able to view data about the store as it is stored in the database and should be able to use Create, Update and Delete node functions on the data. 
-![interface-diagram](interfaces.png)
+![interface-diagram](/assets/interfaces.PNG)
 
 # Key Design Choices
 Before developing the application, I first designed wireframes for the view layer for the application. The first page that the users will see when they visit the webpage will be the index page. 
 
-![index page](index-ejs.png)
+![index page](/assets/index-ejs.PNG)
 The page will use bootstrap blog style. it will have generic information that will be public to all the managers that visit the site whether they are logged into the site or not. 
 
 ![register page diagram](sign-up.png)
