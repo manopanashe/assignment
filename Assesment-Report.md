@@ -15,37 +15,37 @@ The database uses an existing dataset from the log details  which were previousl
 # Key Design Choices
 Before developing the application, I first designed wireframes for the view layer for the application. The first page that the users will see when they visit the webpage will be the index page. 
 
-![index page](/assets/index-ejs.PNG)
+![index page](/assets/index-ejs.PNG)<br>
 The page will use bootstrap blog style. it will have generic information that will be public to all the managers that visit the site whether they are logged into the site or not. 
 
-![register page diagram](sign-up.png)
+![register page diagram](/assets/sign-up.PNG)
 If the users are new to the site, they should register as a new user to enter the site. They will need to enter a valid email and construct a valid password; the password will then be stored in the system. 
-![log in page diagram](log-in.png)
+![log in page diagram](/assets/log-in.PNG)
 Once the user has been stored, they will be able to log into website. they should enter the email and password that they registered which will allow them access to the site. 
-![store logs diagram](store-logs-page.png)
+![store logs diagram](/assets/store-logs-page.PNG)
 The next step will be the store log page. This page will allow the users to be able to perform CRUD operations on the data that is stored in store collection that is in the database.
 
-![sale logs diagram](sale-logs-page.png)
+![sale logs diagram](/assets/sale-logs-page.PNG)
 The next page will the page dedicated to the sale collection that is in the database. The page will allow the users to perform CRUD operations on the database objects. 
 
-![features logs diagram](weekly-store-logs-page.png)
+![features logs diagram](/assets/weekly-store-logs-page.PNG)
 This page will allow the users to enter more details about the database objects, that are already stored in the database collections. The user will also be able to perform CRUD operations, 
 
-![create new log page diagram](create-log.png)
+![create new log page diagram](/assets/create-log.PNG)
 This page allows the users to be able to create new logs. They will be asked to enter details about and then they will submit form back to the webserver. 
-![Update log diagram](update-log.png)
+![Update log diagram](/assets/update-log.PNG)
 This page also allows the user to update existing logs in the database. it will retrieve the existing database object and allow the user to edit. The page will then take the edited log and return it to the database. 
 
 # Database Design
-![store dataset diagram](store-dataset.png)
+![store dataset diagram](/assets/store-dataset.PNG)
 The company previously stored its logs into excel sheets that were saved as CSV file. As seen in the image above this is one of the files that stored the store data logs. For this concept application I used MongoDB's model document which  are constructed using flexible JSON-like document. It also provides all the capabilities needed for complex requirements. <br>
-![mongo database diagram](mongo.png)<br>
-![mongo-object diagram](mongo-object.png)<br>
+![mongo database diagram](/assets/mongo.PNG)<br>
+![mongo-object diagram](/assets/mongo-object.PNG)<br>
 After retrieving the three documents I then created three collections a database that has 3 collections. The collections are then inserted with the records from the documents.  
 
 # Security and Scalability
 The application will be receiving  users’ passwords and their emails when they register to their site which means that it needs to be secured to make sure that in the event of a data breach their information will be secured. To accomplish this the application will use hash algorithm to store the user’s passwords into a database. <br>
-![hash architecture diagram](hash-algorithim.png)<br>
+![hash architecture diagram](/assets/hash-algorithim.PNG)<br>
 As seen in the image above when the users enter their passwords into the application registration form, this will be applied to the hash algorithm that will encrypt the password and store it into a database. The application will use the bcrypt hash function which incorporates a salt protection to protect the hash functions against rainbow table and it is resistant against brute force attacks due to its slow speed. <br>
  
 I also made sure that the application would be able to withstand any amount of  workload. This was done through using the MVC architectural pattern which separates the application into three parts and allows the application to send specific aspects to their designated component. 
